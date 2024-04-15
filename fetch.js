@@ -12,13 +12,17 @@ async function getData(){
     let album = await response.json();
     // console.log(album);
 
-    const body = document.getElementsByTagName('body');
+    const body = document.getElementsByTagName('body')[0];
+    // const body = document.querySelector('body');
+    // if you assign an id
+    // const body = document.getElementById('bd');
+
     console.log(body);
     const title = document.createElement('p')
     console.log(title)
     title.innerHTML = `The song is ${album[0].title}`;
     console.log(title);
-    // body.append(title)
+    body.append(title)
 }
 
 getData();
